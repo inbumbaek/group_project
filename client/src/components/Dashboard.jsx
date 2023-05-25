@@ -165,7 +165,8 @@ const Dashboard = () => {
         </div>
         {/* ----------CARD---------- */}
       </div>
-      <button className = "btn btn-primary" onClick={logout}>Logout</button>
+      <br/>
+      <button className="button-62" onClick={logout}>Logout</button>
     </div>
   );
 };

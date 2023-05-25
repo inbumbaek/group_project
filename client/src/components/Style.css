@@ -41,6 +41,13 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  margin-bottom: 40px;
+}
+.navBar1 {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
 }

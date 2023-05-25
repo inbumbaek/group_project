@@ -83,10 +83,12 @@ const Register = (props) => {
                     ) : null}
                         {errors.confirmPassword ? errors.confirmPassword.message : null}
                 </div>
-                <button type="submit" className="btn btn-primary">Create an account</button>
+                <br />
+                <button type="submit" className="button-62">Create an account</button>
             </form>
+            <br />
             <div className="text-center">
-                <p>Already have an account? <Link to="/">Log in here</Link></p>
+                <p>Already have an account? <Link className="button-62" to="/">Log in here</Link></p>
             </div>
         </div>
     );

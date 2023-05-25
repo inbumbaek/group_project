@@ -32,7 +32,8 @@ const Login = (props) => {
         <div>
             <h2 className="text-green-custom">Welcome to Plant Care Service</h2>
             <form onSubmit={loginHandler} className='col-4 mx-auto user-form'>
-            <label className='form-label text-dark font-weight-bold'>Email: </label>
+                <div>
+                    <label className='form-label text-dark font-weight-bold'>Email: </label>
                 <input className='form-control' type='text' onChange={changeHandler} value={userLogin.email} name='email'/>
                     {userLogin.email.length < 2 && userLogin.email.length > 0 ? (
                     <p>Email must be at least 2 characters</p>
@@ -42,9 +43,13 @@ const Login = (props) => {
                     {userLogin.password.length < 8 && userLogin.password.length > 0 ? (
                     <p>Password be at least 8 characters</p>
                     ) : null}
-                <button className='btn btn-dark mt-3'>Sign In</button>
+                </div>
                 <br />
-                <Link to={'/register'}>Would you like to sell your Plants? Register</Link>
+                <div>
+                    <button className="button-62">Sign In</button>
+                </div>
+                <br />
+                <Link className="button-62" to={'/register'}>Would you like to sell your Plants? Register</Link>
             </form>
         </div>
 )}

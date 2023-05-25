@@ -48,10 +48,12 @@ const CreatePlant = () => {
       <div className="show-details">
         <div className="navBar">
           <h1>What Plants are you selling?</h1>
-          <Link className="button-62" to="/dashboard">
-            Home
-          </Link>
-          <button className = "btn btn-primary" onClick={logout}>Logout</button>
+          <div className="navBar1">
+            <Link className="button-62" to="/dashboard">
+              Home
+            </Link>
+            <button className="button-62" onClick={logout}>Logout</button>
+          </div>
         </div>
         <hr />{" "}
         <form onSubmit={handleSubmit}>
@@ -111,12 +113,15 @@ const CreatePlant = () => {
             <label htmlFor="price" className="form-label">
               Sale Price
             </label>
+            <div className="input-group">
+            <span className="input-group-text">$</span>
             <input
               type="number"
               className="form-control"
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />
+            </div>
             {errors.price ? (
               <p className="error-message">{errors.price.message}</p>
             ) : null}

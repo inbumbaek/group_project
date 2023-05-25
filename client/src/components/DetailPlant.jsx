@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 const DetailPlant = (props) => {
   const [plant, setPlant] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -16,6 +17,16 @@ const DetailPlant = (props) => {
       .catch((err) => console.log(err));
   }, []);
 
+  const logout = () => {
+    axios.post('http://localhost:8000/api/logout', {}, {withCredentials:true})
+    .then((res) => {
+        navigate('/')
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
   return (
     <div className="show-details-container">
       <div className="show-details">
@@ -26,9 +37,12 @@ const DetailPlant = (props) => {
             </div>
             <h1 style={{ marginLeft: "10px" }}> {plant.name}</h1>
           </div>
-          <Link className="button-62" to="/dashboard">
+          <div className="navBar1">
+            <Link className="button-62" to="/dashboard">
             Home
-          </Link>
+            </Link>
+            <button className="button-62" onClick={logout}>Logout</button>
+          </div>
         </div>
 
         <div>

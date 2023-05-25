@@ -66,10 +66,12 @@ const EditPlant = (props) => {
       <div className="show-details">
         <div className="navBar">
           <h1>{plantName}</h1>
-          <Link className="button-62" to="/dashboard">
+          <div className="navBar1">
+            <Link className="button-62" to="/dashboard">
             Home
           </Link>
-          <button className = "btn btn-primary" onClick={logout}>Logout</button>
+          <button className="button-62" onClick={logout}>Logout</button>
+          </div>
         </div>
         <form onSubmit={handleSubmit}>
           {plantNotFound ? (
@@ -136,6 +138,8 @@ const EditPlant = (props) => {
                 <label htmlFor="price" className="form-label">
                   Sale Price
                 </label>
+                <div className="input-group">
+                <span className="input-group-text">$</span>
                 <input
                   type="number"
                   className="form-control"
@@ -144,6 +148,7 @@ const EditPlant = (props) => {
                   }
                   value={plantPrice}
                 />
+                </div>
                 {errors.price ? (
                   <p className="error-message">{errors.price.message}</p>
                 ) : null}
