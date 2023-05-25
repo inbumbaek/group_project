@@ -31,7 +31,9 @@ const Register = (props) => {
             });
     };
     return (
-        <div className="register-container">
+        <div className="register">
+            <h1 className="text-center">Register</h1>
+            <br />
             <form onSubmit={submitHandler} className="col-4 mx-auto user-form">
                 <div className="form-group">
                     <label className='form-label text-dark font-weight-bold'>First Name:</label>
@@ -39,7 +41,7 @@ const Register = (props) => {
                 </div>
                 <div>
                     {user.firstName.length < 2 && user.firstName.length > 0 ? (
-                        <p>First Name be at least 2 characters</p>
+                        <p className="text-danger">First Name be at least 2 characters</p>
                     ) : null}
                         {errors.firstName ? errors.firstName.message : null}
                 </div>
@@ -49,7 +51,7 @@ const Register = (props) => {
                 </div>
                 <div>
                     {user.lastName.length < 2 && user.lastName.length > 0 ? (
-                        <p>Last Name be at least 2 characters</p>
+                        <p className="text-danger">Last Name be at least 2 characters</p>
                     ) : null}
                         {errors.lastName ? errors.lastName.message : null}
                 </div>
@@ -59,7 +61,7 @@ const Register = (props) => {
                 </div>
                 <div>
                     {user.email.length < 2 && user.email.length > 0 ? (
-                        <p>First Name be at least 2 characters</p>
+                        <p className="text-danger">Email be at least 2 characters</p>
                     ) : null}
                         {errors.email ? errors.email.message : null}
                 </div>
@@ -69,7 +71,7 @@ const Register = (props) => {
                 </div>
                 <div>
                     {user.password.length < 8 && user.password.length > 0 ? (
-                        <p>Password be at least 8 characters</p>
+                        <p className="text-danger">Password be at least 8 characters</p>
                     ) : null}
                         {errors.password ? errors.password.message : null}
                 </div>
@@ -79,12 +81,14 @@ const Register = (props) => {
                 </div>
                 <div>
                     {user.confirmPassword.length < 8 && user.confirmPassword.length > 0 ? (
-                        <p>Password be at least 8 characters</p>
+                        <p className="text-danger">Password be at least 8 characters</p>
                     ) : null}
                         {errors.confirmPassword ? errors.confirmPassword.message : null}
                 </div>
                 <br />
-                <button type="submit" className="button-62">Create an account</button>
+                <div className="container">
+                    <button type="submit" className="button-62">Create an account</button>
+                </div>
             </form>
             <br />
             <div className="text-center">
