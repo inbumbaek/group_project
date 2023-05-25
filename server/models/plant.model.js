@@ -19,8 +19,8 @@ const PlantSchema = {
   price: {
     type: Number,
     required: [true, "Price is required"],
-    set: (value) => parseFloat(value).toFixed(2),
-    get: (value) => parseFloat(value).toFixed(2),
+    // set: (value) => parseFloat(value).toFixed(2),
+    // get: (value) => parseFloat(value).toFixed(2),
   },
   sellerName: {
     type: String,
